@@ -47,6 +47,15 @@ TagManager:
   - name: decor_bacground
     uniqueID: 4104313111
     locked: 0
+  - name: collision
+    uniqueID: 2710663939
+    locked: 0
+  - name: player
+    uniqueID: 510375325
+    locked: 0
+  - name: behind
+    uniqueID: 3726576995
+    locked: 0
   m_RenderingLayers:
   - Default
   m_MigratedRenderPipelines: []
