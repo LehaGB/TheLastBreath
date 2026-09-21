@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    void FixedUpdate()
+    void Update()
     {
         rb.linearVelocity = movement * moveSpeed;
     }
