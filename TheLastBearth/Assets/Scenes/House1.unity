@@ -1391,6 +1391,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7590594187355353214, guid: 03d1ca6ce7e42e747bb082e111300e24, type: 3}
       propertyPath: m_Name
+      value: Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 8786493144971706190, guid: 03d1ca6ce7e42e747bb082e111300e24, type: 3}
+      propertyPath: sceneName
       value: SampleScene
       objectReference: {fileID: 0}
     m_RemovedComponents: []

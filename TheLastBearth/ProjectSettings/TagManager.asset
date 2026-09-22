@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - Door
+  - Interactive
   layers:
   - Default
   - TransparentFX
@@ -56,6 +57,9 @@ TagManager:
     locked: 0
   - name: behind
     uniqueID: 3726576995
+    locked: 0
+  - name: Object
+    uniqueID: 1787888933
     locked: 0
   m_RenderingLayers:
   - Default
