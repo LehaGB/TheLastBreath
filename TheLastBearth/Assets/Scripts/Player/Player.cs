@@ -30,8 +30,8 @@ public class Player : MonoBehaviour
         if (context.canceled)
         {
             animator.SetBool("isMoving", false);
-            animator.SetFloat("lastX", movement.x);
-            animator.SetFloat("lastY", movement.y);
+            animator.SetFloat("LastX", movement.x);
+            animator.SetFloat("LastY", movement.y);
         }
         movement = context.ReadValue<Vector2>();
 
