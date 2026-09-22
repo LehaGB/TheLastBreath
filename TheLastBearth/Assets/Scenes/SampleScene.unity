@@ -66598,7 +66598,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7590594187355353214, guid: 03d1ca6ce7e42e747bb082e111300e24, type: 3}
       propertyPath: m_Name
-      value: House1
+      value: Door
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -66615,11 +66615,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 135094754662742800, guid: 23b819db6fe4bca4fa2d5e4da9ae1965, type: 3}
       propertyPath: m_Size.y
-      value: 0.35822678
+      value: 0.2872672
       objectReference: {fileID: 0}
     - target: {fileID: 135094754662742800, guid: 23b819db6fe4bca4fa2d5e4da9ae1965, type: 3}
       propertyPath: m_Offset.y
-      value: 0.75088215
+      value: 0.71540236
       objectReference: {fileID: 0}
     - target: {fileID: 3507904581776678088, guid: 23b819db6fe4bca4fa2d5e4da9ae1965, type: 3}
       propertyPath: m_Name

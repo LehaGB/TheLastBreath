@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -22,6 +23,14 @@ public class Player : MonoBehaviour
         rb.linearVelocity = movement * moveSpeed;
     }
 
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag.Equals("Door"))
+        {
+            SceneManager.LoadSceneAsync(collision.gameObject.name, LoadSceneMode.Single);
+        }
+    }
 
     public void Move(InputAction.CallbackContext context)
     {
