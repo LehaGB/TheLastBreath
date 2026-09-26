@@ -66972,6 +66972,17 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &2067879116 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1686995613192477456, guid: 41be9557cd8613f47a53e13f46c19a9e, type: 3}
+  m_PrefabInstance: {fileID: 466334536}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Slider
 --- !u!1001 &1326939831477700782
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -67086,6 +67097,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6932286922650506346, guid: 41be9557cd8613f47a53e13f46c19a9e, type: 3}
   m_PrefabInstance: {fileID: 1326939831477700782}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1326939831477700784 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1686995613192477456, guid: 41be9557cd8613f47a53e13f46c19a9e, type: 3}
+  m_PrefabInstance: {fileID: 1326939831477700782}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Slider
 --- !u!1001 &2623835147783875792
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -67167,6 +67189,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4115641351514242616, guid: 23b819db6fe4bca4fa2d5e4da9ae1965, type: 3}
+      propertyPath: healthSlider
+      value: 
+      objectReference: {fileID: 1326939831477700784}
+    - target: {fileID: 4115641351514242616, guid: 23b819db6fe4bca4fa2d5e4da9ae1965, type: 3}
+      propertyPath: stomachSlider
+      value: 
+      objectReference: {fileID: 2067879116}
     - target: {fileID: 4115641351514242616, guid: 23b819db6fe4bca4fa2d5e4da9ae1965, type: 3}
       propertyPath: realoadPosition
       value: 1
