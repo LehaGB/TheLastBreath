@@ -7,16 +7,6 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-    [Tooltip("Жизнь игрока")]
-    [Header("Уровень жизни игрока")]
-    [SerializeField] private Slider healthSlider;
-
-    [Space]
-
-    [Tooltip("Желудок")]
-    [Header("Уровень голодности")]
-    [SerializeField] private Slider stomachSlider;
-
     [Tooltip("Скорость игрока")]
     [Header("Скорость игрока")]
     [SerializeField] private float moveSpeed = 3f;
@@ -26,18 +16,6 @@ public class Player : MonoBehaviour
     [Tooltip("Загрузка позиции игрока при выходе из локации")]
     [Header("Загрузка позиции игрока при выходе из локации")]
     [SerializeField] private bool realoadPosition = false;
-
-    [Space]
-
-    [Tooltip("Уменьшение жизни")]
-    [Header("На какое количество уменьшяется жизнь")]
-    [SerializeField] private float minusInHealth = 0.01f;
-
-    [Space]
-
-    [Tooltip("Уменьшение желудка")]
-    [Header("На какое количество уменьшяется желудок")]
-    [SerializeField] private float minusInStomach = 0.01f;
 
     [Space]
 
@@ -61,8 +39,6 @@ public class Player : MonoBehaviour
     void Update()
     {
         rb.linearVelocity = movement * moveSpeed;
-        StomachEmptying();
-        ShorteningHealth();
     }
 
 
@@ -71,25 +47,6 @@ public class Player : MonoBehaviour
         if (collision.gameObject.tag.Equals("Interactive"))
         {
             collision.gameObject.GetComponent<InteractiveObject>().Action();
-        }
-    }
-
-    // Опустошение желудка.
-    private void StomachEmptying()
-    {
-        if(stomachSlider.value != 0)
-        {
-            stomachSlider.value = stomachSlider.value - minusInStomach;
-        }
-    }
-
-
-    // Укорачивание жизни.
-    private void ShorteningHealth()
-    {
-        if (stomachSlider.value != 0)
-        {
-            healthSlider.value = healthSlider.value - minusInHealth;
         }
     }
 
