@@ -44,9 +44,14 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag.Equals("Interactive"))
+        if (collision.CompareTag("Interactive"))
         {
-            collision.gameObject.GetComponent<InteractiveObject>().Action();
+            InteractiveObject interactiveObject = collision.GetComponent<InteractiveObject>();
+
+            if(interactiveObject != null)
+            {
+                interactiveObject.Action();
+            }
         }
     }
 

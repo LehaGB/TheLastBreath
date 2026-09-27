@@ -25,9 +25,16 @@ public class PlayerHealth : MonoBehaviour
     [Header("На какое количество уменьшяется желудок")]
     [SerializeField] private float minusInStomach = 0.05f;
 
+    [Tooltip("GetComponent<Image>() желудка")]
     private Image stomachFillImage;
+
+    [Tooltip("GetComponent<Image>() жизни")]
     private Image healthFillImage;
+
+    [Tooltip("Текущий цвет слайдера желудка")]
     private Color mainStomachColor;
+
+    [Tooltip("Текущий цвет слайдера жизни")]
     private Color mainHealthColor;
 
     private void Start()
@@ -46,28 +53,29 @@ public class PlayerHealth : MonoBehaviour
         ShorteningHealth();
     }
 
-    // Опустошение желудка.
+    //  Опустошение желудка.
     private void StomachEmptying()
     {
         if (stomachSlider.value != 0)
         {
-            stomachSlider.value = stomachSlider.value - (minusInStomach * Time.deltaTime);
+            stomachSlider.value -= minusInStomach * Time.deltaTime;
             ChangeColorHungry(stomachSlider, stomachFillImage, mainStomachColor);
         }
     }
 
 
-    // Укорачивание жизни.
+    //  Укорачивание жизни.
     private void ShorteningHealth()
     {
         if (stomachSlider.value == 0)
         {
-            healthSlider.value = healthSlider.value - (minusInHealth * Time.deltaTime);
+            healthSlider.value -= minusInHealth * Time.deltaTime;
+            ChangeColorHungry(healthSlider, healthFillImage, mainHealthColor);
         }
-        ChangeColorHungry(healthSlider, healthFillImage, mainHealthColor);
     }
 
 
+    //  Меням цвут слайдера в зависимости от условия.
     private void ChangeColorHungry(Slider slider, Image image, Color mainColor)
     {
         if (slider.value > 50 && image.color != mainColor)
@@ -82,5 +90,10 @@ public class PlayerHealth : MonoBehaviour
         {
             image.color = Color.red;
         }   
+    }
+
+    public void AddCalories(float calories)
+    {
+        stomachSlider.value = Mathf.Min(stomachSlider.maxValue, stomachSlider.value + calories);
     }
 }
