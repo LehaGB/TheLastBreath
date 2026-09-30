@@ -53,6 +53,15 @@ public class Player : MonoBehaviour
                 interactiveObject.Action();
             }
         }
+        else if (collision.CompareTag("Food"))
+        {
+            FoodObject foodObject = collision.GetComponent<FoodObject>();
+
+            if(foodObject != null)
+            {
+                foodObject.Eat(GetComponent<PlayerHealth>());
+            }
+        }
     }
 
 

@@ -53,7 +53,10 @@ public class PlayerHealth : MonoBehaviour
         ShorteningHealth();
     }
 
-    //  Опустошение желудка.
+
+    /// <summary>
+    /// Опустошение желудка.
+    /// </summary>
     private void StomachEmptying()
     {
         if (stomachSlider.value != 0)
@@ -64,7 +67,9 @@ public class PlayerHealth : MonoBehaviour
     }
 
 
-    //  Укорачивание жизни.
+    /// <summary>
+    /// Укорачивание жизни.
+    /// </summary>
     private void ShorteningHealth()
     {
         if (stomachSlider.value == 0)
@@ -75,7 +80,12 @@ public class PlayerHealth : MonoBehaviour
     }
 
 
-    //  Меням цвут слайдера в зависимости от условия.
+    /// <summary>
+    /// Меням цвут слайдера в зависимости от условия.
+    /// </summary>
+    /// <param name="slider"></param>
+    /// <param name="image"></param>
+    /// <param name="mainColor"></param>
     private void ChangeColorHungry(Slider slider, Image image, Color mainColor)
     {
         if (slider.value > 50 && image.color != mainColor)
@@ -92,8 +102,22 @@ public class PlayerHealth : MonoBehaviour
         }   
     }
 
+    /// <summary>
+    /// Наедаемся.
+    /// </summary>
+    /// <param name="calories"></param>
     public void AddCalories(float calories)
     {
         stomachSlider.value = Mathf.Min(stomachSlider.maxValue, stomachSlider.value + calories);
+    }
+
+
+    /// <summary>
+    /// Прибавляем жизни.
+    /// </summary>
+    /// <param name="calories"></param>
+    public void AddHealth(float calories)
+    {
+        healthSlider.value = Mathf.Min(healthSlider.maxValue, healthSlider.value + calories);
     }
 }

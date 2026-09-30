@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7027702705078711486}
   m_Layer: 0
   m_Name: banana
-  m_TagString: Interactive
+  m_TagString: Food
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -153,3 +153,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Food
   calories: 10
+  fruitsGrowSpeed: 0.003

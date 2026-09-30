@@ -1,10 +1,14 @@
 using UnityEngine;
 
-public class Food : InteractiveObject
+public class Food : FoodObject
 {
-    [Tooltip("Каллории банана")]
+    [Tooltip("Каллории фрукта")]
     [Header("Каллории фрукта")]
     [SerializeField] private float calories = 10;
+
+    [Tooltip("Увеличение калорий по мере роста")]
+    [Header("Увеличение калорий по мере роста")]
+    [SerializeField] private float growCaloriesIncrease = 10;
 
     [Tooltip("Скорость роста фрукта")]
     [Header("Скорость роста фрукта")]
@@ -13,15 +17,11 @@ public class Food : InteractiveObject
     [Tooltip("Оригинальный размер фрукта")]
     private Vector3 originScaleFruits;
 
-    [Tooltip("Ссылка на скрипт, жизь игрока")]
-    private PlayerHealth playerHealth;
-
 
     private void Start()
     {
         originScaleFruits = transform.localScale;
         transform.localScale = Vector3.zero;
-        playerHealth = GameObject.Find("Player").GetComponent<PlayerHealth>();
     }
 
 
@@ -30,9 +30,10 @@ public class Food : InteractiveObject
         GrowFruits();
     }
 
-    public override void Action()
+    public override void Eat(PlayerHealth playerHealth)
     {
         playerHealth.AddCalories(calories);
+        playerHealth.AddHealth(calories);
         Destroy(gameObject);
     }
 
@@ -44,6 +45,8 @@ public class Food : InteractiveObject
             Vector3 newScale = transform.localScale;
             newScale.x += fruitsGrowSpeed * Time.deltaTime;
             newScale.y += fruitsGrowSpeed * Time.deltaTime;
+            calories += (fruitsGrowSpeed * Time.deltaTime) * growCaloriesIncrease;
+            Debug.Log("calories" + calories);
             transform.localScale = newScale;
         }
     }

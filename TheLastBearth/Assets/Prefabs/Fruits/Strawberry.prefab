@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4412737880510629643}
   m_Layer: 0
   m_Name: Strawberry
-  m_TagString: Interactive
+  m_TagString: Food
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -152,5 +152,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5eaef013b55e6064d8730d3afd572a26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Food
-  calories: 50
+  calories: 0
+  growCaloriesIncrease: 50
   fruitsGrowSpeed: 0.05
